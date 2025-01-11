@@ -1,0 +1,286 @@
+## FORMAT ## 
+
+palette = "catppuccin_mocha"
+
+format = """
+$os\
+$hostname\
+$username\
+$directory\
+$fill\
+$shell\
+$python\
+$c\
+$cmake\
+$rust\
+$zig\
+$conda\
+$nodejs\
+$bun\
+$deno\
+$aws\
+$container\
+$docker_context\
+$kubernetes\
+$helpm\
+$time\
+$line_break\
+$cmd_duration\
+$character
+"""
+
+right_format = """
+$package\
+$git_branch\
+$git_status\
+$git_commit\
+$git_metrics\
+$fossil_branch\
+$fossil_metrics\
+$jobs\
+$all
+"""
+
+add_newline = false
+## SYSTEM ##
+
+[os]
+
+style = 'bold fg:_text2 bg:_6'
+format = "[](_6)[$symbol$hostname]($style)"
+disabled = false
+
+[hostname]
+style = 'bold fg:_text2 bg:_6'
+ssh_symbol = " "
+ssh_only = false
+format = '[$ssh_symbol$hostname]($style)[](fg:_6 bg:_7)'
+disabled = false
+
+[localip]
+ssh_only = false
+format = '@[$localipv4](bold red) '
+disabled = true
+
+[username]
+
+show_always = true
+style_user = "bg:_7"
+style_root = "bg:_7"
+format = '[ $user](bold fg:_text2 bg:_7)[](bold fg:_7)'
+disabled = false
+
+[fill]
+
+symbol = ' '
+
+[shell]
+bash_indicator = '_'
+zsh_indicator = '_'
+unknown_indicator = 'mystery shell'
+style = 'bold fg:_text bg:_4'
+disabled = true
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = 'bold fg:_text bg:_1'
+format = '[](bold fg:_1)[ $time]($style)[](bold fg:_1)'
+
+[directory]
+
+home_symbol = ' ~'
+format = '[](bold fg:_1)[$path]($style)[$read_only]($read_only_style)[](bold fg:_1)'
+style = 'bold fg:_text bg:_1'
+repo_root_style = 'bold fg:_text bg:_1'
+before_repo_root_style = 'bold fg:_text bg:_1'
+repo_root_format ='[](bold fg:_1)[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style)[](bold fg:_1)'
+truncation_length = 6
+truncate_to_repo = false
+truncation_symbol = '../'
+read_only = ''
+disabled = false
+
+[character]
+success_symbol = '[](bold fg:#2EFFA3)'
+
+[cmd_duration]
+
+min_time = 0
+show_milliseconds = true
+format = 't [$duration]($style) '
+
+
+## VERSION CONTROL ##
+
+[git_branch]
+
+format = '[](bold fg:_1)[$symbol$branch(:$remote_branch)]($style)[](bold fg:_1)'
+symbol = " "
+style = 'bold fg:_text bg:_1'
+
+[git_commit]
+
+style = 'bold fg:_text bg:_2'
+tag_symbol = '  '
+format = 'tag123 [{$hash}{$tag}]($style)'
+disabled = true
+tag_disabled = false
+
+[git_metrics]
+deleted_style = 'bold red'
+added_style	= 'bold green'
+#style = 'bold fg:_text bg:_2'
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+disabled = false
+
+[package]
+symbol = "󰏗 "
+disabled = true
+format = '[$symbol$version]($style)'
+
+[fossil_branch]
+symbol = '🦎 '
+truncation_length = 4
+truncation_symbol = ''
+
+[fossil_metrics]
+added_style = 'bold blue'
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+
+
+## PROGRAMMING LANGUAGES ##
+
+[python]
+
+style = 'bold fg:_text bg:_2'
+symbol = " "
+format = '[](fg:_2)[${symbol}](bold blue bg:_2)[${pyenv_prefix}${version}${virtualenv}](bold fg:yellow bg:_2)[](fg:_2)'
+
+[c]
+
+symbol = ""
+
+[conda]
+
+style = 'bold fg:_text bg:_2'
+symbol = " "
+format = '[](fg:_2)[$symbol$environment]($style)[](fg:_2)'
+
+[docker_context]
+
+symbol = " "
+
+[golang]
+
+symbol = " "
+
+[nodejs]
+
+symbol = " "
+
+[aws]
+
+symbol = "  "
+
+
+
+
+
+
+
+
+
+
+[palettes.catppuccin_mocha]
+
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
+
+_1 = "#001a0e"
+_2 = "#00331b"
+_3 = "#004d29"
+_4 = "#006636"
+_5 = "#008044"
+
+_6 = "#180107"
+_7 = "#31020e"
+_8 = "#490315"
+_9 = "#62041c"
+_10 = "#7a0522"
+
+_text = "#1aff9c"
+_text2 = "#f52458"
+
+[os.symbols]
+
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
+
+
+
