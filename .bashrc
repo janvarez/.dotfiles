@@ -146,6 +146,7 @@ fi
 export GST_PLUGIN_PATH=/usr/lib/x86_64-linux-gnu/gstreamer-1.0
 export PATH="$HOME/zig-linux-x86_64-0.13.0:$PATH"
 
+alias cd="z"
 alias cp='cp -i'
 alias cat='bat'
 alias l="eza --icons"
@@ -159,3 +160,8 @@ eval "$(starship init bash)"
 
 source ~/.local/share/blesh/ble.sh
 fastfetch
+
+. "$HOME/.atuin/bin/env"
+
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+eval "$(atuin init bash --disable-up-arrow)"
