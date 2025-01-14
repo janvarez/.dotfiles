@@ -1,6 +1,6 @@
 {
   "capture_background" : "false",
-  "generate_png" : "false",
+  "generate_png" : "true",
   "show_preview" : "true",
   "show_list" : "true",
   "pane_position" : "750",
