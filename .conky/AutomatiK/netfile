@@ -60,7 +60,7 @@ gap_x = 30,
 };
 
 conky.text = [[
-${image incos/earth_network.png -p 0,0 -s 30x30}
+${image icons/earth_network.png -p 0,0 -s 30x30}
 ${offset 35}${font Good Times:size=12}${color Tan1}NETWORK I/O ${color}${hr 2}${font}
 IP address: ${texeci 10000 wget -q -O - checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//'}       Local IP:${addr enp5s0}
 ${if_match "${addr enp5s0}"!="No Address"}${goto 14}Interface: ${color3}enp5s0${color}${goto 160}
