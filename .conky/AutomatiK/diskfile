@@ -56,7 +56,7 @@ conky.config = {
 
 
 
-gap_x = 30,
+	gap_x = 30,
 	gap_y = 585,
 
 	lua_load = 'allcombined.lua',
