@@ -6,9 +6,9 @@ conky.config = {
 
 	--xinerama_head = 2,
 
-	--own_window_type = desktop,
+	--own_window_type desktop
 	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
-	--own_window_type = override,
+	--own_window_type override
 	own_window_argb_visual = true,
 	own_window_argb_value = 160,
 	out_to_console = false,
@@ -17,8 +17,8 @@ conky.config = {
 	use_xft = true,
 	font = 'cure:size=10',
 
-	--use_xft = yes,
-	--xftfont = 'Sansation:size=9',
+	--use_xft yes
+	--xftfont Sansation:size=9
 	font = 'Rounded Elegance:size=10',
 	xftalpha = 0,
 	update_interval = 2,
