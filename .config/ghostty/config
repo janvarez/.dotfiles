@@ -7,5 +7,6 @@ background-opacity = 0.75
 
 #ommand = ~/session.sh
 
-window-height = 99999
-window-width = 999999
+#fullscreen = false
+window-height = 55
+window-width = 195
