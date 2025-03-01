@@ -164,8 +164,12 @@ alias vk='NVIM_APPNAME=nvim-kickstart nvim' # Kickstart
 alias va='NVIM_APPNAME=nvim-astrovim nvim'  # AstroVim
 alias vl='NVIM_APPNAME=nvim-lunarvim nvim'  # LunarVim
 
+export EDITOR='nvim'
 eval "$(zoxide init bash)"
 eval "$(starship init bash)"
+
+export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
+eval "$(tmuxifier init -)"
 
 source ~/.local/share/blesh/ble.sh
 fastfetch
