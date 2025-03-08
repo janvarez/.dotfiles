@@ -1,24 +1,24 @@
-vim.opt.backspace = '2'
+vim.opt.backspace = "indent,eol,start"
 vim.opt.autowrite = true
 vim.opt.cursorline = false
 vim.opt.expandtab = true
-vim.opt.tabstop=2
-vim.opt.softtabstop=2
-vim.opt.shiftwidth=2
+vim.opt.tabstop = 3
+vim.opt.softtabstop = 3
+vim.opt.shiftwidth = 3
 vim.opt.number = true
 vim.opt.relativenumber = false
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = "unnamedplus"
 vim.opt.wrap = false
 vim.opt.linebreak = true
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 vim.opt.autoindent = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.iskeyword:append '-'
+vim.opt.iskeyword:append("-")
 vim.opt.showtabline = 2
 vim.opt.smartindent = true
 vim.opt.swapfile = false
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.termguicolors = true
-vim.o.completeopt = 'menuone,noselect'
+vim.opt.completeopt = "menuone,noselect"
