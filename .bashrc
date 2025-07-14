@@ -125,21 +125,17 @@ alias nvitop="pipx run nvitop"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/janvarez/miniconda3/bin/conda' 'shell.bash' 'hook' 2>/dev/null)"
+__conda_setup="$('/home/janvarez/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
-  eval "$__conda_setup"
+    eval "$__conda_setup"
 else
-  if [ -f "/home/janvarez/miniconda3/etc/profile.d/conda.sh" ]; then
-    . "/home/janvarez/miniconda3/etc/profile.d/conda.sh"
-  else
-    export PATH="/home/janvarez/miniconda3/bin:$PATH"
-  fi
+    if [ -f "/home/janvarez/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/janvarez/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/janvarez/miniconda3/bin:$PATH"
+    fi
 fi
 unset __conda_setup
-
-if [ -f "/home/janvarez/miniconda3/etc/profile.d/mamba.sh" ]; then
-  . "/home/janvarez/miniconda3/etc/profile.d/mamba.sh"
-fi
 # <<< conda initialize <<<
 
 export GST_PLUGIN_PATH=/usr/lib/x86_64-linux-gnu/gstreamer-1.0
@@ -194,3 +190,17 @@ vv() {
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export LD_LIBRARY_PATH=/opt/oracle/instantclient_19_27:$LD_LIBRARY_PATH
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba shell init' !!
+export MAMBA_EXE='/home/janvarez/miniconda3/bin/mamba';
+export MAMBA_ROOT_PREFIX='/home/janvarez/miniconda3';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    alias mamba="$MAMBA_EXE"  # Fallback on help from mamba activate
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
